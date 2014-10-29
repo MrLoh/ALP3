@@ -48,4 +48,4 @@ n/2^k = 1  <=>  k = log(n)
      in O(n)
 
 
-## Geometrische Reihe: H(q,m) = Sum_i=0^m q^i = (1-q)^(m+1)/(1-q)
+## Geometrische Reihe: H(q,m) = Sum_i=0^m q^i = (1-q^(m+1))/(1-q)
