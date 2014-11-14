@@ -1,4 +1,4 @@
-public class Wort implements Eintrag<String,Integer> {
+public class Wort {
 	static int counter = 0;
 	String k;
 	Integer v;
@@ -18,6 +18,6 @@ public class Wort implements Eintrag<String,Integer> {
 	}
 
 	public String toString() {
-		return this.k + ":" + this.v;
+		return "(" + this.k + "," + this.v + ")";
 	}
 }
