@@ -111,14 +111,6 @@ public class a1 {
 		}
 
 
-		// int[] arr = newArray(20, 20);
-		// System.out.println(Arrays.toString(arr));
-		// intplSearch(arr, 10);
-		// System.out.println(calls);
-		// intplSearch(arr, 5);
-		// System.out.println(calls);
-
-
 		int[] badArr = {1,1,1,1,1,1,1,1,2,99};
 		System.out.println("Take the array: "+Arrays.toString(badArr));
 		System.out.println("then: (key-arr[l])/(arr[r]-arr[l]) = (2-1)/(3-1) = 0");

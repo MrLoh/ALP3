@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{tikz-qtree}
+
+\title {ALP III: Datenstrukturen und Datenabstraktion\\ 6. Aufgabenblatt \\ Übungsgruppe 1.8: Marcel Erhardt } 
+\author {Tobias Lohse/ Marvin Kleinert/ Anton Drewing}
+\date{28.11.2014} 
+\geometry{top=20mm, left=30mm, right=30mm, bottom=20mm}
+
+\begin{document}
+\maketitle
+
+\section*{Aufgabe 2}
+\subsection*{AVL-Baum}
+\begin{enumerate}
+\item \Tree [.Jan $\bot$ $\bot$ ] 
+\item \Tree [.Jan [.Feb $\bot$ $\bot$ ] $\bot$ ] 
+\item \Tree [.Jan [.Feb $\bot$ $\bot$ ] [.Mär $\bot$ $\bot$ ] ]
+\item \Tree [.Jan [.Feb [.Apr $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ $\bot$ ] ]
+\item \Tree [.Jan [.Feb [.Apr $\bot$ $\bot$ ] $\bot$ ] [.Mär [.Mai $\bot$ $\bot$ ] $\bot$ ] ]
+\item \Tree [.Jan [.Feb [.Apr $\bot$ $\bot$ ] $\bot$ ] [.Mär [.Mai [.Jun $\bot$ $\bot$ ] $\bot$ ] $\bot$ ] ]
+\Tree [.Jan [.Feb [.Apr $\bot$ $\bot$ ] $\bot$ ] [.Mai [.Jun $\bot$ $\bot$ ] [.Mär $\bot$ $\bot$ ] ] ]
+\item \Tree [.Jan [.Feb [.Apr $\bot$ $\bot$ ] $\bot$ ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ $\bot$ ] ] ]
+\item \Tree [.Jan [.Feb [.Apr $\bot$ [.Aug $\bot$ $\bot$ ] ] $\bot$ ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ $\bot$ ] ] ]
+\Tree [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ $\bot$ ] ] ]
+\item \Tree [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ [.Sept $\bot$ $\bot$ ] ] ] ]
+\item \Tree [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ [.Sept [.Okt $\bot$ $\bot$ ] $\bot$ ] ] ] ]
+\Tree [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Okt [.März $\bot$ $\bot$ ] [.Sep $\bot$ $\bot$ ] ] ] ]
+\item \Tree [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Okt [.Mär $\bot$ [.Nov $\bot$ $\bot$ ] ] [.Sep $\bot$ $\bot$ ] ] ] ]
+\Tree [.Mai [.Jan [.Aug [.Apr $\bot$ $\bot$ ] [.Feb $\bot$ $\bot$ ] ] [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] ] [.Okt [.Mär $\bot$ [.Nov $\bot$ $\bot$ ] ] [.Sep $\bot$ $\bot$ ] ] ]
+\item \Tree [.Mai [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] ] [.Okt [.Mär $\bot$ [.Nov $\bot$ $\bot$ ] ] [.Sep $\bot$ $\bot$ ] ] ]
+\end{enumerate}
+\subsection*{(2,4)-Baum}
+\begin{enumerate}
+\item \Tree [.Jan ]
+\item \Tree [.Feb Feb Jan  ]
+\item \Tree [.{Feb Jan} Feb Jan Mär ]
+\item \Tree [.{Apr Feb Jan} Apr Feb Jan Mär ]
+\item \Tree [.Feb [.Apr Apr Feb ] [.{Jan Mai} Jan Mai Mär ] ] 
+\item \Tree [.Feb [.Apr Apr Feb ] [.{Jan Jun Mai} Jan Jun Mai Mär ] ] 
+\item \Tree [.{Feb Jul} [.Apr Apr Feb ] [.Jan Jan Jul ] [.{Jun Mai} Jun Mai Mär ] ] 
+\item \Tree [.{Feb Jul} [.{Apr Aug} Apr Aug Feb ] [.Jan Jan Jul ] [.{Jun Mai} Jun Mai Mär ] ]
+\item \Tree [.{Feb Jul} [.{Apr Aug} Apr Aug Feb ] [.Jan Jan Jul ] [.{Jun Mai Mär} Jun Mai Mär Sep ] ] 
+\item \Tree [.{Feb Jul Mai} [.{Apr Aug} Apr Aug Feb ] [.Jan Jan Jul ] [.Jun Jun Mai ] [.{Mär Okt} Mär Okt Sep ] ]
+\item \Tree [.{Feb Jul Mai} [.{Apr Aug} Apr Aug Feb ] [.Jan Jan Jul ] [.Jun Jun Mai ] [.{Mär Nov Okt} Mär Nov Okt Sep ] ]  
+\item \Tree [.{Feb Jul Mai} [.{Apr Aug Dez} Apr Aug Dez Feb ] [.Jan Jan Jul ] [.Jun Jun Mai ] [.{Mär Nov Okt} Mär Nov Okt Sep ] ]     
+\end{enumerate}
+\subsection*{AVL-Baum: Streichungen}
+\begin{enumerate}
+\item \Tree [.Mai [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] ] [.Okt [.Mär $\bot$ [.Nov $\bot$ $\bot$ ] ] $\bot$ ] ]
+\Tree [.Mai [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] ] [.Nov [.Mär $\bot$ $\bot$ ] [.Okt $\bot$ $\bot$ ] ] ]
+\newline
+\Tree [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Nov [.Mär $\bot$ $\bot$ ] [.Okt $\bot$ $\bot$ ] ] ] ]
+\item \Tree [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Nov [.Mär $\bot$ $\bot$ ] $\bot$ ] ] ]
+\item \Tree [.Jan [.Aug [.Apr $\bot$ [.Dez $\bot$ $\bot$ ] ] [.Feb $\bot$ $\bot$ ] ] [.Mai [.Jun [.Jul $\bot$ $\bot$ ] $\bot$ ] [.Mär $\bot$ $\bot$ ] ] ]
+\end{enumerate}
+\end{document}
