@@ -2,7 +2,7 @@
 
 **1. D[i,j] = min( D[i,j], max(D[i,k], D[k,j]) )**
 
-
+Benötigte Tankfüllung für kürzesten Weg.
 
 **2. D[i,j] = max( D[i,j], min(D[i,k], D[k,j]) )**
 
